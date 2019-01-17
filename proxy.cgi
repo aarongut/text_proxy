@@ -30,6 +30,7 @@ def main():
 
     data = fetch_site(url)
 
+    print_headers()
     print(format_output(url, data))
 
 if __name__ == '__main__':

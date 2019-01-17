@@ -22,12 +22,12 @@ def print_headers():
 def main():
     form = cgi.FieldStorage()
 
-    if 'u' not in form:
+    url = form.getValue('u', '')
+    if not url:
         print('Status: 400 Bad Request\r\n\r\n')
         print('Missing required field\r\n\r\n')
         return
 
-    url = form['u']
     data = fetch_site(url)
 
     print(format_output(url, data))

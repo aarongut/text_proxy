@@ -17,17 +17,14 @@ def format_output(url, data):
     return template.format(url, data)
 
 def print_headers():
-    print('Content-Type: text/html; charset=utf8')
-    print()
+    print('Content-Type: text/html; charset=utf8\r\n\r\n')
 
 def main():
     form = cgi.FieldStorage()
 
-    if 'u' not in form or len(form['u']) == 0:
-        print('Status: 400 Bad Request')
-        print()
-        print('Missing required field')
-        print()
+    if 'u' not in form:
+        print('Status: 400 Bad Request\r\n\r\n')
+        print('Missing required field\r\n\r\n')
         return
 
     url = form['u']

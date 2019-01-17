@@ -8,7 +8,7 @@ cgitb.enable()
 
 def fetch_site(url):
     data = subprocess.check_output(['w3m', '-dump', url])
-    return output.decode()
+    return data.decode()
 
 def format_output(url, data):
     with open('template.html', 'r') as f:
@@ -22,7 +22,7 @@ def print_headers():
 def main():
     form = cgi.FieldStorage()
 
-    url = form.getValue('u', '')
+    url = form.getvalue('u', '')
     if not url:
         print('Status: 400 Bad Request\r\n\r\n')
         print('Missing required field\r\n\r\n')

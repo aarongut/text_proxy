@@ -1,0 +1,79 @@
+html,
+body,
+pre {
+	font-family: 'Nanum Gothic Coding', monospace;
+}
+
+html,
+body {
+	background-color: #2e3440;
+	color: #d8dee9;
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	font-family: 'Nanum Gothic', sans-serif;
+	font-size: 28px;
+	font-weight: 800;
+	text-align: center;
+}
+
+.main {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding: 32px;
+}
+
+pre,
+label,
+input {
+	font-size: 16px;
+	line-height: 22px;
+}
+
+form {
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: column;
+	flex-wrap: wrap;
+	text-align: center;
+}
+
+input {
+	border: 1px solid #d8dee9;
+	border-radius: 22px;
+	background-color: #2e3440;
+	color: #d8dee9;
+	height: 44px;
+	box-sizing: border-box;
+}
+
+input[type=url] {
+	padding: 4px 22px;
+	margin: 22px 0;
+	flex: 1 1 auto;
+}
+
+input:focus {
+	outline: none;
+}
+
+@media(min-width: 480px) {
+	form {
+		align-items: baseline;
+		flex-direction: row;
+		justify-content: center;
+		max-width: 600px;
+	}
+
+	input[type=url] {
+		margin: 22px;
+	}
+
+	input[type=submit] {
+		flex: 0 0 auto;
+		width: 44px;
+	}
+}

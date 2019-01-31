@@ -1,10 +1,4 @@
 html,
-body,
-pre {
-	font-family: 'Nanum Gothic Coding', monospace;
-}
-
-html,
 body {
 	background-color: #2e3440;
 	color: #d8dee9;
@@ -13,7 +7,6 @@ body {
 }
 
 h1 {
-	font-family: 'Nanum Gothic', sans-serif;
 	font-size: 28px;
 	font-weight: 800;
 	text-align: center;
@@ -26,16 +19,24 @@ h1 {
 	padding: 32px;
 }
 
-pre,
+.text {
+	font-size: 16px;
+	line-height: 22px;
+	margin: 0;
+	max-width: 40em;
+	white-space: pre-line;
+}
+
+img {
+	margin: 16px 0;
+	max-width: 100%;
+}
+
 label,
 input {
 	font-size: 16px;
 	line-height: 22px;
 	margin: 0;
-}
-
-pre {
-	max-width: 100%;
 }
 
 form {
@@ -53,6 +54,10 @@ input {
 	color: #d8dee9;
 	height: 44px;
 	box-sizing: border-box;
+}
+
+input[type=submit] {
+	cursor: pointer;
 }
 
 input[type=url] {

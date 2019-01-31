@@ -4,17 +4,27 @@ import cgi
 import cgitb
 import subprocess
 
+from goose3 import Goose
+
 cgitb.enable()
 
-def fetch_site(url):
-    data = subprocess.check_output(['w3m', '-dump', url])
-    return data.decode()
+goose = Goose({'enable_image_fetching': True})
 
-def format_output(url, data):
+def fetch_site(url):
+    return goose.extract(url=url)
+
+def format_output(article):
     with open('template.html', 'r') as f:
         template = f.read()
 
-    return template.format(url, data)
+    extra = ""
+    if article.top_image:
+        extra += """<img src="{}" />""".format(article.top_image.src)
+
+    return template.format(
+        title=article.title,
+        body=article.cleaned_text,
+        extra=extra)
 
 def print_headers():
     print('Content-Type: text/html; charset=utf8\r\n\r\n')
@@ -31,7 +41,7 @@ def main():
     data = fetch_site(url)
 
     print_headers()
-    print(format_output(url, data))
+    print(format_output(data))
 
 if __name__ == '__main__':
     main()

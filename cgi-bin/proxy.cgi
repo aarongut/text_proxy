@@ -8,7 +8,7 @@ from goose3 import Goose
 
 cgitb.enable()
 
-goose = Goose({'enable_image_fetching': True})
+goose = Goose({'enable_image_fetching': False})
 
 def fetch_site(url):
     return goose.extract(url=url)

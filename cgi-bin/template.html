@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" contents="#2e3440">
+    <meta name="theme-color" content="#2e3440">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>{title} - TextProxy</title>
     <link href="/site.css" rel="stylesheet">
@@ -26,7 +26,25 @@
     </div>
   <script type="text/javascript">
     function setTheme(e) {{
-      document.body.className = e.currentTarget.value;
+      const theme = e.currentTarget.value;
+
+      document.body.className = theme;
+
+      let color;
+      switch (theme) {{
+        case "dark":
+          color = "#2e3440";
+          break;
+        case "light":
+          color = "#ffffff";
+          break;
+        case "darker":
+        default:
+          color = "#000000";
+          break;
+      }}
+
+      document.getElementsByName("theme-color")[0].content = color;
     }}
   </script>
   </body>

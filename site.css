@@ -1,7 +1,24 @@
+.light {
+	--background: #fff;
+	--foreground: #333;
+}
+
+.dark {
+	--background: #2e3440;
+	--foreground: #d8dee9;
+}
+
+.darker {
+	--background: #000;
+	--foreground: #d8dee9;
+}
+
+
 html,
 body {
-	background-color: #2e3440;
-	color: #d8dee9;
+	background-color: var(--background);
+	color: var(--foreground);
+	font-family: serif;
 	margin: 0;
 	padding: 0;
 }
@@ -9,6 +26,7 @@ body {
 h1 {
 	font-size: 28px;
 	font-weight: 800;
+	hyphens: auto;
 	text-align: center;
 }
 
@@ -17,6 +35,11 @@ h1 {
 	flex-direction: row;
 	justify-content: center;
 	padding: 32px;
+}
+
+.theme {
+	align-items: center;
+	display: flex;
 }
 
 .text {
@@ -48,10 +71,10 @@ form {
 }
 
 input {
-	border: 1px solid #d8dee9;
+	border: 1px solid var(--foreground);
 	border-radius: 22px;
-	background-color: #2e3440;
-	color: #d8dee9;
+	background-color: var(--background);
+	color: var(--foreground);
 	height: 44px;
 	box-sizing: border-box;
 }
@@ -68,6 +91,11 @@ input[type=url] {
 
 input:focus {
 	outline: none;
+}
+
+select {
+	margin-left: auto;
+	margin-right: auto;
 }
 
 @media(min-width: 500px) {

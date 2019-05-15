@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#2e3440">
@@ -13,7 +13,7 @@
   <body class="dark">
     <h1>{title}</h1>
     <div class="theme">
-      <select onchange="setTheme(event)">
+      <select aria-label="Theme" onchange="setTheme(event)">
         <option value="darker">Light-on-Black</option>
         <option value="dark" selected>Light-on-Dark</option>
         <option value="light">Dark-on-White</option>
@@ -25,27 +25,27 @@
       </div>
     </div>
   <script type="text/javascript">
-    function setTheme(e) {{
-      const theme = e.currentTarget.value;
+function setTheme(e) {{
+  const theme = e.currentTarget.value;
 
-      document.body.className = theme;
+  document.body.className = theme;
 
-      let color;
-      switch (theme) {{
-        case "dark":
-          color = "#2e3440";
-          break;
-        case "light":
-          color = "#ffffff";
-          break;
-        case "darker":
-        default:
-          color = "#000000";
-          break;
-      }}
+  let color;
+  switch (theme) {{
+    case "dark":
+      color = "#2e3440";
+      break;
+    case "light":
+      color = "#ffffff";
+      break;
+    case "darker":
+    default:
+      color = "#000000";
+      break;
+  }}
 
-      document.getElementsByName("theme-color")[0].content = color;
-    }}
+  document.getElementsByName("theme-color")[0].content = color;
+}}
   </script>
   </body>
 </html>

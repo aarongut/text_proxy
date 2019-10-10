@@ -13,6 +13,17 @@
 	--foreground: #d8dee9;
 }
 
+body {
+	--background: #fff;
+	--foreground: #333;
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		--background: #2e3440;
+		--foreground: #d8dee9;
+	}
+}
 
 html,
 body {

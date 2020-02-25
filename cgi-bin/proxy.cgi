@@ -2,7 +2,6 @@
 
 import cgi
 import cgitb
-import subprocess
 
 from goose3 import Goose
 
